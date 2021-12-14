@@ -104,6 +104,9 @@ class Player:
                     self.bullet_list.append(Bullet(self.player_pos, self.code_good,1))
                     self.bullet_list.append(Bullet(self.player_pos, self.code_good,2))
                     self.bullet_list.append(Bullet(self.player_pos, self.code_good,3))
+                    if self.code_good:  # if we have the right code entered
+                        self.bullet_list.append(Bullet(self.player_pos, self.code_good,4))
+                        self.bullet_list.append(Bullet(self.player_pos, self.code_good,5))
                     self.x = 0
 
     def draw(self, surf):

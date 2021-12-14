@@ -53,7 +53,7 @@ while not done:
         if star[1] > star[2] + 600:
             star[1] = -star[2]
     if code_good:
-        my_map.Player.attack = 50
+        my_map.Player.attack = 10
     if boss.mHealth <= 0:
         boss.mHealth = 0
         for explostion in boss.mExplosions:

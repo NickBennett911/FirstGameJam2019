@@ -16,10 +16,7 @@ class Bullet:
 
     def update(self, dt):
 
-        if self.code_good == True:
-            #print("es bueno amigo")
-            #self.speed_y = 300 * 2
-            self.speed_x = 10 * 2
+        
 
         if self.dir == 2:
             self.pos[1] -= self.speed_y * dt
@@ -37,6 +34,16 @@ class Bullet:
         elif self.dir == -3:
             self.pos[0] -= self.speed_x * dt
             self.pos[1] += self.speed_y * dt
+
+        if self.code_good == True:
+            #print("es bueno amigo")
+            #self.speed_y = 300 * 2
+            if self.dir == 4:
+                self.pos[0] += -self.speed_x * dt * 0.5
+                self.pos[1] -= self.speed_y * dt
+            elif self.dir == 5:
+                self.pos[0] -= -self.speed_x * dt * 0.5
+                self.pos[1] -= self.speed_y * dt
 
     def draw(self, win):
         pygame.draw.circle(win, (0, 255, 0), (int(self.pos[0]), int(self.pos[1])), self.rad)
